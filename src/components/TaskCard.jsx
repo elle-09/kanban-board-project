@@ -3,7 +3,7 @@ import people from "../data/people";
 
 function TaskCard({task,onEdit}){
 
-    const{deleteTask} = useTasks();
+    const{deleteTask, updateTask} = useTasks();
 
     const handleDelete = () => {
         const confirmed = window.confirm(
@@ -13,6 +13,15 @@ function TaskCard({task,onEdit}){
         if (confirmed) {
             deleteTask(task.id);
         }
+    };
+
+    const handleMove = (e) => {
+        const newStatus = e.target.value;
+        const updates = { status: newStatus };
+        updates.completeDate = newStatus === "DONE"
+            ? new Date().toISOString().split("T")[0]
+            : null;
+        updateTask(task.id, updates);
     };
 
     const person = people.find(
@@ -49,7 +58,20 @@ function TaskCard({task,onEdit}){
                 {task.dueDate}
             </p>
 
+            {task.status === "DONE" && task.completeDate && (
+                <p>
+                    <strong>Completed:</strong>{" "}
+                    {task.completeDate}
+                </p>
+            )}
+
             <div className="task-actions">
+
+                <select value={task.status} onChange={handleMove}>
+                    <option value="TO DO">TO DO</option>
+                    <option value="DOING">DOING</option>
+                    <option value="DONE">DONE</option>
+                </select>
 
                 <button onClick={() => onEdit(task)}>
                     Edit

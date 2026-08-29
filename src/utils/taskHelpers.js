@@ -6,7 +6,7 @@ export function isOverdue(task) {
 export function getSummary(tasks) {
   return {
     total: tasks.length,
-    todo: tasks.filter(t => t.status === "TODO").length,
+    todo: tasks.filter(t => t.status === "TO DO").length,
     doing: tasks.filter(t => t.status === "DOING").length,
     done: tasks.filter(t => t.status === "DONE").length,
     overdue: tasks.filter(isOverdue).length,
