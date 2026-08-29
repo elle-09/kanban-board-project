@@ -1,10 +1,10 @@
-export default function SummaryCard({ label, value, icon, color }) {
+export default function SummaryCard({ label, value, icon, accent = "blue" }) {
   return (
-    <div className={`rounded-xl shadow-md p-5 flex items-center gap-4 border-l-4 ${color} bg-white`}>
-      <div className="text-3xl">{icon}</div>
-      <div>
-        <p className="text-3xl font-bold text-gray-800">{value}</p>
-        <p className="text-sm text-gray-500 font-medium">{label}</p>
+    <div className={`summary-card summary-card--${accent}`}>
+      <div className="summary-icon">{icon}</div>
+      <div className="summary-content">
+        <p className="summary-value">{value}</p>
+        <p className="summary-label">{label}</p>
       </div>
     </div>
   );

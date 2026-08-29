@@ -1,5 +1,8 @@
 import { useTasks } from "../context/TaskContext";
 import SummaryCard from "../components/SummaryCard";
+import StatusChart from "../components/StatusChart";
+import CategoryChart from "../components/CategoryChart";
+import PerformanceChart from "../components/PerformanceChart";
 import { getSummary } from "../utils/taskHelpers";
 
 export default function Dashboard() {
@@ -7,41 +10,58 @@ export default function Dashboard() {
   const summary = getSummary(tasks);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-1">Dashboard</h2>
-      <p className="text-gray-500 mb-6">Overview of all your tasks</p>
+    <div className="dashboard">
+      {/* Header */}
+      <div className="dashboard-header">
+        <div>
+          <h2 className="dashboard-title">Analytics</h2>
+          
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* Summary Cards */}
+      <div className="summary-grid">
         <SummaryCard
           label="Total Tasks"
           value={summary.total}
-          icon="📋"
-          color="border-blue-500"
+          icon="🌌"
+          accent="blue"
         />
         <SummaryCard
           label="To Do"
           value={summary.todo}
-          icon="🗒️"
-          color="border-gray-400"
+          icon="📝"
+          accent="slate"
         />
         <SummaryCard
           label="Doing"
           value={summary.doing}
-          icon="⚙️"
-          color="border-yellow-500"
+          icon="⚡"
+          accent="amber"
         />
         <SummaryCard
           label="Done"
           value={summary.done}
-          icon="✅"
-          color="border-green-500"
+          icon="✨"
+          accent="emerald"
         />
         <SummaryCard
           label="Overdue"
           value={summary.overdue}
-          icon="⏰"
-          color="border-red-500"
+          icon="🔥"
+          accent="rose"
         />
+      </div>
+
+      {/* Charts Row 1 */}
+      <div className="charts-row">
+        <StatusChart tasks={tasks} />
+        <CategoryChart tasks={tasks} />
+      </div>
+
+      {/* Charts Row 2 – Performance */}
+      <div className="charts-row single">
+        <PerformanceChart tasks={tasks} />
       </div>
     </div>
   );
