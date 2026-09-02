@@ -1,16 +1,61 @@
-# React + Vite
+Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Team Member
+- Nang Nu Nu Aye
+- Lin Lin Wai
+- Yamin Thwe
 
-Currently, two official plugins are available:
+Project Description
+    -This is for task management website which help users organize and track tasks efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This include: -create new task
+            -edit existing task
+            - delete task
+            - organize task into TO DO, DOING and DONE column
+            - assign task to responsible people
+            - add new categories
+            - set start and due dates
+            - view completed and overdue
+            - save tasks and categories using local storage
 
-## React Compiler
+We are using react, javascript, vite, HTML, CSS and local storage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Basic Usage Instruction
 
-## Expanding the ESLint configuration
+Install project
+- Build repository
+- Clone the project
+- npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Start website
+- npm run dev
+- open local URL(localhost: 5173)
+
+Create task
+- Click + Add Task.
+- Enter the task title and description.
+- Select a category.
+- Select the start date and due date.
+- Select the responsible person.
+- Click the button to create/save the task.
+
+Manage task
+- Use Edit to modify a task.
+- Use Delete to remove a task.
+- Use the status dropdown to move a task between:
+- TO DO
+- DOING
+- DONE
+
+Dashboard
+#Click Dashboard to view:
+
+- Total Tasks
+- To Do tasks
+- Doing tasks
+- Done tasks
+- Overdue tasks
+
+Data Storage
+
+Tasks and categories are stored in the browser's Local Storage, so the data remains available after refreshing the page.

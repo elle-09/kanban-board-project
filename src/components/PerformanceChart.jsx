@@ -52,7 +52,7 @@ export default function PerformanceChart({ tasks }) {
                 background: "#1e1b4b",
                 border: "1px solid #4c1d95",
                 borderRadius: "12px",
-                color: "#e0e7ff",
+                color: "white",
               }}
               cursor={{ fill: "rgba(139,92,246,0.08)" }}
             />
