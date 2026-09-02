@@ -20,6 +20,21 @@ This include: -create new task
 
 We are using react, javascript, vite, HTML, CSS and local storage
 
+#Screenshots
+
+#Home Page
+
+<p align="center">
+  <img src="./screenshots/home.png" alt="Home Page" width="800">
+</p>
+
+# Dashboard
+
+<p align="center">
+  <img src="./screenshots/Dashboard.png" alt="Dashboard" width="800">
+</p>
+
+
 Basic Usage Instruction
 
 Install project
